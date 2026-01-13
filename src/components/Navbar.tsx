@@ -9,8 +9,6 @@ const navLinks = [
     label: "Builders",
     href: "/#initiatives",
     submenu: [
-      { label: "Global Defense 300", href: "/global-defense-300" },
-      { label: "Top Defense Companies 2024", href: "/top-defense-companies-2024" },
       { label: "Intrepid List 2025", href: "/intrepid-investors" },
       { label: "Clean Capital", href: "/clean-capital" },
     ]

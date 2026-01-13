@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { ScrollRestoration } from "@/components/ScrollRestoration";
 import Index from "./pages/Index";
+import { PasswordProtected } from "@/components/PasswordProtected";
 import VeteranEmployers from "./pages/VeteranEmployers";
 import CleanCapital from "./pages/CleanCapital";
 import Fellows2025 from "./pages/Fellows2025";
@@ -38,9 +39,17 @@ const App = () => (
             <Route path="/intrepid-investors" element={<IntrepidInvestors />} />
             <Route path="/clean-capital" element={<CleanCapital />} />
             <Route path="/fellows-2025" element={<Fellows2025 />} />
-            <Route path="/global-defense-300" element={<GlobalDefense300 />} />
+            <Route path="/global-defense-300" element={
+              <PasswordProtected>
+                <GlobalDefense300 />
+              </PasswordProtected>
+            } />
             <Route path="/decoupling-index" element={<DecouplingIndex />} />
-            <Route path="/top-defense-companies-2024" element={<TopDefenseCompanies2024 />} />
+            <Route path="/top-defense-companies-2024" element={
+              <PasswordProtected>
+                <TopDefenseCompanies2024 />
+              </PasswordProtected>
+            } />
             <Route path="/research" element={<ResearchPage />} />
             <Route path="/views" element={<ViewsPage />} />
             <Route path="/pensions" element={<Pensions />} />
