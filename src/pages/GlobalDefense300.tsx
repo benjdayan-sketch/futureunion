@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, Shield, Download, Globe, Target } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -7,6 +8,10 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 const GlobalDefense300 = () => {
     return (
         <main className="min-h-screen bg-background">
+            <SEO
+                title="Global Defense 300"
+                description="We stripped away the marketing hype to grade the top companies on a single metric: ability to solve National Security Challenges. The free world prevails only if the Arsenal of Democracy is global."
+            />
             <Navbar />
 
             {/* Hero Section */}
@@ -31,8 +36,8 @@ const GlobalDefense300 = () => {
                         "The Shield Must Be Shared."
                     </p>
                     <p className="mt-6 text-xl text-muted-foreground max-w-3xl">
-                        The free world prevails only if the Arsenal of Democracy is global. We stripped away 
-                        the marketing hype to grade the top companies on a single metric: ability to solve 
+                        The free world prevails only if the Arsenal of Democracy is global. We stripped away
+                        the marketing hype to grade the top companies on a single metric: ability to solve
                         National Security Challenges.
                     </p>
                 </div>
@@ -51,18 +56,18 @@ const GlobalDefense300 = () => {
 
                         <div className="space-y-6 text-muted-foreground leading-relaxed mb-12">
                             <p>
-                                For too long, the narrative has ignored the critical contributions of our international 
-                                allies. As such, we are the first ranking to look past the American government primes 
-                                and emerging defenders to find the critical international players who are building the 
+                                For too long, the narrative has ignored the critical contributions of our international
+                                allies. As such, we are the first ranking to look past the American government primes
+                                and emerging defenders to find the critical international players who are building the
                                 sovereign capabilities required for modern allied deterrence.
                             </p>
                             <p>
-                                Future Union aligns the global capital and industrial base required to win the 
+                                Future Union aligns the global capital and industrial base required to win the
                                 future—independently and collectively.
                             </p>
                             <p>
-                                Instead of looking at technologies and venture funding, we are looking at 
-                                outcomes—singularly, solutions delivered, by any and all means available, which 
+                                Instead of looking at technologies and venture funding, we are looking at
+                                outcomes—singularly, solutions delivered, by any and all means available, which
                                 candidates are the leaders in solving problems.
                             </p>
                         </div>
@@ -89,8 +94,8 @@ const GlobalDefense300 = () => {
                                 Celebrating Sovereign Defense Tech
                             </h3>
                             <p className="text-muted-foreground leading-relaxed">
-                                We are shining a light on the 300 companies—from Paris to Seoul—that are developing 
-                                the capabilities the Alliance needs. We celebrate the rise of sovereign defense tech 
+                                We are shining a light on the 300 companies—from Paris to Seoul—that are developing
+                                the capabilities the Alliance needs. We celebrate the rise of sovereign defense tech
                                 as the ultimate partner to American strength.
                             </p>
                         </div>
@@ -102,7 +107,7 @@ const GlobalDefense300 = () => {
                                 <h3 className="font-display text-2xl text-foreground">View the Allied Matrix</h3>
                             </div>
                             <p className="text-muted-foreground mb-6">
-                                Access the complete Global Defense 300 ranking with detailed analysis of each 
+                                Access the complete Global Defense 300 ranking with detailed analysis of each
                                 company's national security contributions.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">

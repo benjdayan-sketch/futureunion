@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, FileText, Download, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -35,6 +36,10 @@ const researchReports = [
 const ResearchPage = () => {
     return (
         <main className="min-h-screen bg-background">
+            <SEO
+                title="Research"
+                description="In-depth analysis and reports on critical issues at the intersection of democracy, technology, and national security."
+            />
             <Navbar />
 
             {/* Hero Section */}

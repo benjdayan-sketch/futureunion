@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,6 +7,10 @@ import { Link } from "react-router-dom";
 const TermsPage = () => {
     return (
         <main className="min-h-screen bg-background">
+            <SEO
+                title="Terms of Use"
+                description="Read our Terms of Use to understand the rules and regulations for using the Future Union website."
+            />
             <Navbar />
 
             {/* Hero Section */}

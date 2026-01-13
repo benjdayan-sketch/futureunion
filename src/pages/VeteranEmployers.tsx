@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -39,6 +40,10 @@ const employers = [
 const VeteranEmployers = () => {
   return (
     <main className="min-h-screen bg-background">
+      <SEO
+        title="Veterans Transparency Index"
+        description="We honor the 30 companies that go beyond marketing placards. Our 4th edition is the definitive transparency ranking designed to highlight the companies providing transparent, high-retention career paths for our transitioning military community."
+      />
       <Navbar />
 
       {/* Hero Section */}
@@ -59,8 +64,8 @@ const VeteranEmployers = () => {
             "The Definitive Transparency Ranking."
           </p>
           <p className="mt-6 text-xl text-muted-foreground max-w-3xl">
-            We honor the 30 companies that go beyond marketing placards. Our 4th edition is the 
-            definitive transparency ranking designed to highlight the companies providing transparent, 
+            We honor the 30 companies that go beyond marketing placards. Our 4th edition is the
+            definitive transparency ranking designed to highlight the companies providing transparent,
             high-retention career paths for our transitioning military community.
           </p>
         </div>

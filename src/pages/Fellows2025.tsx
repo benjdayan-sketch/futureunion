@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -147,6 +148,10 @@ const experts = [
 const Fellows2025 = () => {
   return (
     <main className="min-h-screen bg-background">
+      <SEO
+        title="Fellows 2025"
+        description="The 2025 cohort is our largest yet—linking private sector leaders with government stewards and elected representatives to offer technology insights."
+      />
       <Navbar />
 
       {/* Hero Section */}
@@ -167,9 +172,9 @@ const Fellows2025 = () => {
             "The Technological Wizards."
           </p>
           <p className="mt-6 text-xl text-muted-foreground max-w-3xl">
-            The 2025 cohort is our largest yet—linking private sector leaders with government 
-            stewards and elected representatives to offer technology insights. By convening a 
-            breadth of experience with leaders, we are facilitating credible, capable overlap 
+            The 2025 cohort is our largest yet—linking private sector leaders with government
+            stewards and elected representatives to offer technology insights. By convening a
+            breadth of experience with leaders, we are facilitating credible, capable overlap
             at the intersection of tech and policy.
           </p>
         </div>
@@ -183,7 +188,7 @@ const Fellows2025 = () => {
               Making the Policy Class More Effective
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Our goal is to make the policy class more effective, less reactive, by interlocking 
+              Our goal is to make the policy class more effective, less reactive, by interlocking
               private sector technological know-how with the architects of policy.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">

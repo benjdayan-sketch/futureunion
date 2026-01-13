@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, AlertTriangle, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -72,6 +73,10 @@ const endowmentData = [
 const Endowments = () => {
   return (
     <main className="min-h-screen bg-background">
+      <SEO
+        title="Endowments"
+        description="University Endowments Record of Investing in Adversarial Countries. Examining university endowment investments in foreign adversarial entities."
+      />
       <Navbar />
 
       {/* Hero Section */}

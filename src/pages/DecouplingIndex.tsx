@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, BarChart3, Download, TrendingUp, TrendingDown } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -7,6 +8,10 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 const DecouplingIndex = () => {
     return (
         <main className="min-h-screen bg-background">
+            <SEO
+                title="Decoupling Index"
+                description="Economic separation is a requirement to ensure democracy's geopolitical supremacy. In our 3rd annual report, we audited the S&P 500 to track the companies that have taken action, severing ties with Russia and China."
+            />
             <Navbar />
 
             {/* Hero Section */}
@@ -31,8 +36,8 @@ const DecouplingIndex = () => {
                         The Separation Scorecard
                     </p>
                     <p className="mt-6 text-xl text-muted-foreground max-w-3xl">
-                        Economic separation is a requirement to ensure democracy's geopolitical supremacy. 
-                        In our 3rd annual report, we audited the S&P 500 to track the companies that have 
+                        Economic separation is a requirement to ensure democracy's geopolitical supremacy.
+                        In our 3rd annual report, we audited the S&P 500 to track the companies that have
                         taken action, severing ties with Russia and China.
                     </p>
                 </div>
@@ -51,7 +56,7 @@ const DecouplingIndex = () => {
 
                         <div className="space-y-6 text-muted-foreground leading-relaxed mb-12">
                             <p>
-                                It is the scorecard for economic sovereignty. We found that sectors like 
+                                It is the scorecard for economic sovereignty. We found that sectors like
                                 Information Technology remain dangerously enmeshed with adversarial nations.
                             </p>
                         </div>
@@ -97,8 +102,8 @@ const DecouplingIndex = () => {
                                 Key Finding
                             </h3>
                             <p className="text-muted-foreground leading-relaxed">
-                                Sectors like Information Technology remain dangerously enmeshed with adversarial 
-                                nations. This represents a critical vulnerability in our economic security posture 
+                                Sectors like Information Technology remain dangerously enmeshed with adversarial
+                                nations. This represents a critical vulnerability in our economic security posture
                                 that must be addressed through deliberate corporate action.
                             </p>
                         </div>
@@ -110,7 +115,7 @@ const DecouplingIndex = () => {
                                 <h3 className="font-display text-2xl text-foreground">Download the Scorecard</h3>
                             </div>
                             <p className="text-muted-foreground mb-6">
-                                Access the complete S&P 500 audit with sector-by-sector analysis and 
+                                Access the complete S&P 500 audit with sector-by-sector analysis and
                                 company-level grades.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">

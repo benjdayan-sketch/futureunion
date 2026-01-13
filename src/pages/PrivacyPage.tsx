@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,6 +7,10 @@ import { Link } from "react-router-dom";
 const PrivacyPage = () => {
     return (
         <main className="min-h-screen bg-background">
+            <SEO
+                title="Privacy Policy"
+                description="Learn about how Future Union collects, uses, and protects your personal information."
+            />
             <Navbar />
 
             {/* Hero Section */}

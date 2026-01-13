@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -68,6 +69,10 @@ const pensionData = [
 const Pensions = () => {
   return (
     <main className="min-h-screen bg-background">
+      <SEO
+        title="Pensions"
+        description="Public Pensions Record of Investing in Adversarial Countries. Analyzing the exposure of US public pension funds to adversarial markets."
+      />
       <Navbar />
 
       {/* Hero Section */}

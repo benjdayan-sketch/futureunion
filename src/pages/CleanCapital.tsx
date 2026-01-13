@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, Shield, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,6 +7,10 @@ import { Link } from "react-router-dom";
 const CleanCapital = () => {
   return (
     <main className="min-h-screen bg-background">
+      <SEO
+        title="Clean Capital"
+        description="Promoting ethical capital sources free from adversarial influence. Geopolitical evaluation and transparency assessment of the funding sources of US and International Venture Capital & Private Equity Funds."
+      />
       <Navbar />
 
       {/* Hero Section */}

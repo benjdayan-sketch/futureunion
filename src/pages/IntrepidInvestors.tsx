@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, Trophy, Download, Shield, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -7,6 +8,10 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 const IntrepidInvestors = () => {
     return (
         <main className="min-h-screen bg-background">
+            <SEO
+                title="Intrepid List 2025"
+                description="Recognizing investors driving innovation in national security. The Intrepid List honors the financiers who have dedicated the time, capital, and resources committing to founders building for security."
+            />
             <Navbar />
 
             {/* Hero Section */}
@@ -31,8 +36,8 @@ const IntrepidInvestors = () => {
                         "Defending Democracy through Dedicated Capital."
                     </p>
                     <p className="mt-6 text-xl text-muted-foreground max-w-3xl">
-                        Three years of tracking the principled investors supporting and securing democracy, 
-                        and now the massive 2025 edition. Now including private equity, this is the ledger 
+                        Three years of tracking the principled investors supporting and securing democracy,
+                        and now the massive 2025 edition. Now including private equity, this is the ledger
                         of the funds deploying billions into in defense of democracy.
                     </p>
                 </div>
@@ -51,12 +56,12 @@ const IntrepidInvestors = () => {
 
                         <div className="space-y-6 text-muted-foreground leading-relaxed mb-12">
                             <p>
-                                The Intrepid List honors the financiers who have dedicated the time, capital, 
-                                and resources committing to founders building for security. Together with the 
+                                The Intrepid List honors the financiers who have dedicated the time, capital,
+                                and resources committing to founders building for security. Together with the
                                 Global Defense 300, they form the unified collective of democratic security.
                             </p>
                             <p>
-                                This list is more than just tracking the ecosystem; it helped build it—serving 
+                                This list is more than just tracking the ecosystem; it helped build it—serving
                                 as the architectural basis for the Department of War's AFWERX venture matching strategy.
                             </p>
                         </div>
@@ -68,8 +73,8 @@ const IntrepidInvestors = () => {
                                 <h3 className="font-display text-2xl text-foreground">Clean Capital Certified</h3>
                             </div>
                             <p className="text-muted-foreground">
-                                Through our Clean Capital Certification, we ensure this engine is fueled by allies, not adversaries. 
-                                Every investor on the Intrepid List has been verified to meet our rigorous standards for 
+                                Through our Clean Capital Certification, we ensure this engine is fueled by allies, not adversaries.
+                                Every investor on the Intrepid List has been verified to meet our rigorous standards for
                                 capital source integrity.
                             </p>
                         </div>
@@ -81,7 +86,7 @@ const IntrepidInvestors = () => {
                                 <h3 className="font-display text-2xl text-foreground">Download the Full Report</h3>
                             </div>
                             <p className="text-muted-foreground mb-6">
-                                The complete investor list, methodology, and rankings are available for download. 
+                                The complete investor list, methodology, and rankings are available for download.
                                 Enter your email to receive the full report.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
@@ -113,7 +118,7 @@ const IntrepidInvestors = () => {
                                     <h3 className="font-semibold text-foreground">Principled Investment</h3>
                                 </div>
                                 <p className="text-muted-foreground text-sm">
-                                    Demonstrated commitment to investing in sectors that strengthen democratic 
+                                    Demonstrated commitment to investing in sectors that strengthen democratic
                                     infrastructure and national security capabilities.
                                 </p>
                             </div>
@@ -123,7 +128,7 @@ const IntrepidInvestors = () => {
                                     <h3 className="font-semibold text-foreground">Clean Capital Standards</h3>
                                 </div>
                                 <p className="text-muted-foreground text-sm">
-                                    Verification that capital sources do not include adversarial nations or 
+                                    Verification that capital sources do not include adversarial nations or
                                     entities that undermine democratic values.
                                 </p>
                             </div>
@@ -133,7 +138,7 @@ const IntrepidInvestors = () => {
                                     <h3 className="font-semibold text-foreground">Founder Support</h3>
                                 </div>
                                 <p className="text-muted-foreground text-sm">
-                                    Dedicated time and resources to founders building technologies for 
+                                    Dedicated time and resources to founders building technologies for
                                     security and democratic resilience.
                                 </p>
                             </div>
@@ -143,7 +148,7 @@ const IntrepidInvestors = () => {
                                     <h3 className="font-semibold text-foreground">Ecosystem Leadership</h3>
                                 </div>
                                 <p className="text-muted-foreground text-sm">
-                                    Active advocacy and leadership in promoting democratic investment 
+                                    Active advocacy and leadership in promoting democratic investment
                                     principles within the broader investment community.
                                 </p>
                             </div>

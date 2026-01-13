@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, ExternalLink, Newspaper } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -55,6 +56,10 @@ const latestNotes = [
 const ViewsPage = () => {
     return (
         <main className="min-h-screen bg-background">
+            <SEO
+                title="Views"
+                description="Featured coverage, analysis, and perspectives on democracy, technology, and the private sector."
+            />
             <Navbar />
 
             {/* Hero Section */}

@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, Shield, Target, Globe, Zap, Brain, Lock, Cpu, Cog, Leaf, Rocket, Crosshair, Bot } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -380,9 +381,8 @@ const CompanyTable = ({ companies, stage }: { companies: Company[]; stage: strin
           {companies.map((company, idx) => (
             <tr
               key={`${stage}-${company.rank}-${company.name}`}
-              className={`border-b border-border/50 transition-all hover:bg-gold/5 ${
-                idx % 2 === 0 ? 'bg-card' : 'bg-background'
-              }`}
+              className={`border-b border-border/50 transition-all hover:bg-gold/5 ${idx % 2 === 0 ? 'bg-card' : 'bg-background'
+                }`}
             >
               <td className="py-3 pl-4 pr-2 md:px-4 text-muted-foreground">{company.rank}</td>
               <td className={`py-3 px-2 md:px-4 ${company.isArsenal ? 'font-bold text-foreground' : 'text-foreground'}`}>
@@ -497,11 +497,10 @@ const CompanyDashboard = ({ verticals }: { verticals: VerticalData[] }) => {
                     setActiveVertical(tab.id);
                     setActiveStage("spark");
                   }}
-                  className={`relative px-4 py-2 text-[0.8rem] uppercase tracking-[0.12em] border transition-all duration-150 cursor-pointer whitespace-nowrap flex items-center gap-2 ${
-                    activeVertical === tab.id
+                  className={`relative px-4 py-2 text-[0.8rem] uppercase tracking-[0.12em] border transition-all duration-150 cursor-pointer whitespace-nowrap flex items-center gap-2 ${activeVertical === tab.id
                       ? "bg-gold/20 border-gold text-foreground"
                       : "bg-background border-border text-muted-foreground hover:border-gold/50 hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   <span className="text-[0.75rem] opacity-70">{tab.index}</span>
                   {tab.label}
@@ -523,11 +522,10 @@ const CompanyDashboard = ({ verticals }: { verticals: VerticalData[] }) => {
                 <button
                   key={stage}
                   onClick={() => setActiveStage(stage)}
-                  className={`px-4 py-1.5 text-[0.78rem] tracking-[0.12em] uppercase border transition-all duration-150 cursor-pointer ${
-                    activeStage === stage
+                  className={`px-4 py-1.5 text-[0.78rem] tracking-[0.12em] uppercase border transition-all duration-150 cursor-pointer ${activeStage === stage
                       ? "bg-gold border-gold text-primary-foreground dark:text-primary-foreground font-semibold"
                       : "bg-background border-border text-muted-foreground hover:border-gold/50 hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   {stage.charAt(0).toUpperCase() + stage.slice(1)}
                 </button>
@@ -548,6 +546,10 @@ const CompanyDashboard = ({ verticals }: { verticals: VerticalData[] }) => {
 const TopDefenseCompanies2024 = () => {
   return (
     <main className="min-h-screen bg-background">
+      <SEO
+        title="Top Defense Companies 2024"
+        description="We stripped away the hype to expose the bedrock of our collective defense with a single, cold mandate: Outcomes over Origins."
+      />
       <Navbar />
 
       {/* Hero Section */}
