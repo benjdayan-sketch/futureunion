@@ -3,6 +3,7 @@ import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, AlertTriangle, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { EditableText } from "@/components/cms/EditableText";
 
 const endowmentData = [
   {
@@ -88,10 +89,10 @@ const Endowments = () => {
           </Link>
 
           <span className="text-gold font-semibold uppercase tracking-widest text-sm">
-            Conflict Capital
+            <EditableText name="endowments.hero.label" defaultContent="Conflict Capital" />
           </span>
           <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide">
-            Endowments
+            <EditableText name="endowments.hero.title" defaultContent="Endowments" />
           </h1>
         </div>
       </section>
@@ -100,35 +101,35 @@ const Endowments = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-6">
           <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide mb-8">
-            University Endowments Record of Investing in Adversarial Countries
+            <EditableText name="endowments.stats.title" defaultContent="University Endowments Record of Investing in Adversarial Countries" />
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Below is the historical record of university endowment investments in the listed countries.
+            <EditableText name="endowments.stats.subtitle" defaultContent="Below is the historical record of university endowment investments in the listed countries." />
           </p>
 
           <div className="bg-card border border-border p-8 mb-12">
             <div className="flex items-start gap-4 mb-6">
               <GraduationCap className="w-8 h-8 text-gold flex-shrink-0" />
-              <h3 className="font-display text-2xl text-foreground">Insights on University Endowments</h3>
+              <h3 className="font-display text-2xl text-foreground"><EditableText name="endowments.insights.title" defaultContent="Insights on University Endowments" /></h3>
             </div>
 
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Major university endowments across the United States have historically invested in funds with ties to adversarial countries, including China and Hong Kong. These investments span some of the nation's most prestigious institutions, from Ivy League universities to leading research institutions.
+                <EditableText name="endowments.insights.p1" multiline defaultContent="Major university endowments across the United States have historically invested in funds with ties to adversarial countries, including China and Hong Kong. These investments span some of the nation's most prestigious institutions, from Ivy League universities to leading research institutions." />
               </p>
               <p>
-                While endowments face less stringent disclosure requirements than public pensions, the available data reveals a pattern of investment in regions that present potential conflicts with democratic values and national security interests.
+                <EditableText name="endowments.insights.p2" multiline defaultContent="While endowments face less stringent disclosure requirements than public pensions, the available data reveals a pattern of investment in regions that present potential conflicts with democratic values and national security interests." />
               </p>
               <p>
-                The lack of transparency in endowment reporting makes comprehensive assessment challenging, but the documented investments represent a significant allocation of educational resources to potentially adversarial economies.
+                <EditableText name="endowments.insights.p3" multiline defaultContent="The lack of transparency in endowment reporting makes comprehensive assessment challenging, but the documented investments represent a significant allocation of educational resources to potentially adversarial economies." />
               </p>
             </div>
           </div>
 
           <div className="bg-muted/50 border border-border p-6 mb-12 text-sm text-muted-foreground">
-            <p className="font-semibold mb-2">Disclaimer:</p>
+            <p className="font-semibold mb-2"><EditableText name="endowments.disclaimer.label" defaultContent="Disclaimer:" /></p>
             <p>
-              The information is derived from publicly available sources and private databases but significantly underreports the scope and scale of the issue. University endowments face limited disclosure requirements, and the actual extent of investments in adversarial countries is likely substantially higher than reported figures indicate.
+              <EditableText name="endowments.disclaimer.text" multiline defaultContent="The information is derived from publicly available sources and private databases but significantly underreports the scope and scale of the issue. University endowments face limited disclosure requirements, and the actual extent of investments in adversarial countries is likely substantially higher than reported figures indicate." />
             </p>
           </div>
         </div>
@@ -138,10 +139,10 @@ const Endowments = () => {
       <section className="py-16 bg-gradient-subtle">
         <div className="container mx-auto px-6">
           <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide mb-4">
-            University Endowments that have made investment commitments to funds in adversarial countries
+            <EditableText name="endowments.list.title" defaultContent="University Endowments that have made investment commitments to funds in adversarial countries" />
           </h2>
           <p className="text-muted-foreground mb-12">
-            The following are listed by State and Assets Under Management:
+            <EditableText name="endowments.list.subtitle" defaultContent="The following are listed by State and Assets Under Management:" />
           </p>
 
           <div className="space-y-8">
@@ -166,9 +167,9 @@ const Endowments = () => {
 
             {/* States with insufficient info */}
             <div className="bg-card border border-border p-6">
-              <h3 className="font-display text-2xl text-muted-foreground mb-4">Other States</h3>
+              <h3 className="font-display text-2xl text-muted-foreground mb-4"><EditableText name="endowments.other.title" defaultContent="Other States" /></h3>
               <p className="text-muted-foreground text-sm">
-                Publicly-available information is insufficient to determine if any universities in the following states have invested in adversarial countries: Alabama, Alaska, Arizona, Arkansas, Colorado, Delaware, Florida, Hawaii, Idaho, Kansas, Kentucky, Maine, and others.
+                <EditableText name="endowments.other.text" multiline defaultContent="Publicly-available information is insufficient to determine if any universities in the following states have invested in adversarial countries: Alabama, Alaska, Arizona, Arkansas, Colorado, Delaware, Florida, Hawaii, Idaho, Kansas, Kentucky, Maine, and others." />
               </p>
             </div>
           </div>

@@ -3,6 +3,7 @@ import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { EditableText } from "@/components/cms/EditableText";
 
 const pensionData = [
   { state: "Alaska", pensions: [{ name: "Alaska Retirement Management Board", aum: "$38.6 billion", investments: 9, amount: "$54 million", lastCommitment: "2021" }] },
@@ -84,10 +85,10 @@ const Pensions = () => {
           </Link>
 
           <span className="text-gold font-semibold uppercase tracking-widest text-sm">
-            Conflict Capital
+            <EditableText name="pensions.hero.label" defaultContent="Conflict Capital" />
           </span>
           <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide">
-            Pensions
+            <EditableText name="pensions.hero.title" defaultContent="Pensions" />
           </h1>
         </div>
       </section>
@@ -96,41 +97,41 @@ const Pensions = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-6">
           <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide mb-8">
-            Public Pensions Record of Investing in Adversarial Countries
+            <EditableText name="pensions.stats.title" defaultContent="Public Pensions Record of Investing in Adversarial Countries" />
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Below is the historical record of private investments in the listed countries.
+            <EditableText name="pensions.stats.subtitle" defaultContent="Below is the historical record of private investments in the listed countries." />
           </p>
 
           <div className="bg-card border border-border p-8 mb-12">
             <div className="flex items-start gap-4 mb-6">
               <AlertTriangle className="w-8 h-8 text-gold flex-shrink-0" />
-              <h3 className="font-display text-2xl text-foreground">Insights on US Public Pensions</h3>
+              <h3 className="font-display text-2xl text-foreground"><EditableText name="pensions.insights.title" defaultContent="Insights on US Public Pensions" /></h3>
             </div>
 
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                The majority of large Public Pensions across the US have invested in China and Hong Kong at some point. More alarming is the recency, as 29 of 74 have made investments in the past 12 months (39%), and 56 of 74 of public pension funds with previous investments have made follow-up investments in the past 36 months: a staggering 75% rate by pension portfolio managers entrusted to manage the vast majority of the wealth of pensioners in the US.
+                <EditableText name="pensions.insights.p1" multiline defaultContent="The majority of large Public Pensions across the US have invested in China and Hong Kong at some point. More alarming is the recency, as 29 of 74 have made investments in the past 12 months (39%), and 56 of 74 of public pension funds with previous investments have made follow-up investments in the past 36 months: a staggering 75% rate by pension portfolio managers entrusted to manage the vast majority of the wealth of pensioners in the US." />
               </p>
               <p>
-                As indicated above, the investment rates have been accelerated and it should be noted that each commitment to China or Hong Kong has an investment period that spans 10 years on average, so the commitments today are legally required to be honored for years to come.
+                <EditableText name="pensions.insights.p2" multiline defaultContent="As indicated above, the investment rates have been accelerated and it should be noted that each commitment to China or Hong Kong has an investment period that spans 10 years on average, so the commitments today are legally required to be honored for years to come." />
               </p>
               <p>
-                Over the past 36 months, US public pensions have invested more than $68 billion in China and Hong Kong. For comparison, that is an order of magnitude more than the total amount that the US government spends, both domestically and abroad, in promoting human rights, a dubious contrast against the principled values we champion to the world.
+                <EditableText name="pensions.insights.p3" multiline defaultContent="Over the past 36 months, US public pensions have invested more than $68 billion in China and Hong Kong. For comparison, that is an order of magnitude more than the total amount that the US government spends, both domestically and abroad, in promoting human rights, a dubious contrast against the principled values we champion to the world." />
               </p>
               <p>
-                Additionally, there is no indication that the pace of investment is abating. As the chart indicates, among the largest pension funds reviewed, the number of Public Pension recommitting to a fund investing in in China reached a 5-year high in 2022.
+                <EditableText name="pensions.insights.p4" multiline defaultContent="Additionally, there is no indication that the pace of investment is abating. As the chart indicates, among the largest pension funds reviewed, the number of Public Pension recommitting to a fund investing in in China reached a 5-year high in 2022." />
               </p>
               <p>
-                Pensions continue to chase returns seemingly without regard to the dilemma of boosting competing technologies and the real risk of intellectual property theft and complicit transfers to adversaries.
+                <EditableText name="pensions.insights.p5" multiline defaultContent="Pensions continue to chase returns seemingly without regard to the dilemma of boosting competing technologies and the real risk of intellectual property theft and complicit transfers to adversaries." />
               </p>
             </div>
           </div>
 
           <div className="bg-muted/50 border border-border p-6 mb-12 text-sm text-muted-foreground">
-            <p className="font-semibold mb-2">Disclaimer:</p>
+            <p className="font-semibold mb-2"><EditableText name="pensions.disclaimer.label" defaultContent="Disclaimer:" /></p>
             <p>
-              The information is derived from publicly available sources and private databases but significantly underreports the scope and scale of the issue, suffering from the twin challenges a) that many public pensions only report in aggregate, thus, offering little transparency on particular fund managers necessary to properly evaluate the investments, and, b) private pensions are not subject to similar disclosure and reporting requirements. Additionally, the lag in reporting under many state-specific regimes may undercount the number of states who have recently made commitments.
+              <EditableText name="pensions.disclaimer.text" multiline defaultContent="The information is derived from publicly available sources and private databases but significantly underreports the scope and scale of the issue, suffering from the twin challenges a) that many public pensions only report in aggregate, thus, offering little transparency on particular fund managers necessary to properly evaluate the investments, and, b) private pensions are not subject to similar disclosure and reporting requirements. Additionally, the lag in reporting under many state-specific regimes may undercount the number of states who have recently made commitments." />
             </p>
           </div>
         </div>
@@ -140,10 +141,10 @@ const Pensions = () => {
       <section className="py-16 bg-gradient-subtle">
         <div className="container mx-auto px-6">
           <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide mb-4">
-            Public Pensions that have made investment commitments to funds in adversarial countries
+            <EditableText name="pensions.list.title" defaultContent="Public Pensions that have made investment commitments to funds in adversarial countries" />
           </h2>
           <p className="text-muted-foreground mb-12">
-            The following are listed by State and Assets Under Management:
+            <EditableText name="pensions.list.subtitle" defaultContent="The following are listed by State and Assets Under Management:" />
           </p>
 
           <div className="space-y-8">

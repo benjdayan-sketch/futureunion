@@ -1,4 +1,7 @@
 import { Mail, ArrowRight } from "lucide-react";
+import { EditableText } from "@/components/cms/EditableText";
+import { EditableLink } from "@/components/cms/EditableLink";
+
 
 export const Contact = () => {
   return (
@@ -12,32 +15,36 @@ export const Contact = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-gold font-semibold uppercase tracking-widest text-sm">
-            Get Involved
+            <EditableText name="home.contact.label" defaultContent="Get Involved" />
           </span>
           <h2 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide">
-            Join the Movement
+            <EditableText name="home.contact.title" defaultContent="Join the Movement" />
           </h2>
-          <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            The self-funded initiative was designed and created to be absent any party 
-            affiliation, only a singularly mission-first, voluntary dedication by all 
-            members committed to translating purpose into measurable change.
-          </p>
+          <div className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <EditableText
+              name="home.contact.description"
+              multiline={true}
+              defaultContent="The self-funded initiative was designed and created to be absent any party affiliation, only a singularly mission-first, voluntary dedication by all members committed to translating purpose into measurable change."
+            />
+          </div>
 
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
-            <a
-              href="mailto:info@futureunion.co"
+            <EditableLink
+              name="home.contact.btn.email.text"
+              linkName="home.contact.btn.email.href"
+              defaultContent="Contact Us"
+              defaultHref="mailto:info@futureunion.co"
               className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold uppercase tracking-wider text-sm hover:opacity-90 transition-all duration-300 shadow-lg"
             >
               <Mail className="w-5 h-5" />
-              Contact Us
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#about"
+            </EditableLink>
+            <EditableLink
+              name="home.contact.btn.more.text"
+              linkName="home.contact.btn.more.href"
+              defaultContent="Learn More"
+              defaultHref="#about"
               className="inline-flex items-center gap-2 px-8 py-4 border border-border text-foreground font-semibold uppercase tracking-wider text-sm hover:border-gold hover:text-gold transition-all duration-300"
-            >
-              Learn More
-            </a>
+            />
           </div>
         </div>
       </div>

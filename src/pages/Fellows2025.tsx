@@ -3,6 +3,7 @@ import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { EditableText } from "@/components/cms/EditableText";
 
 const investors = [
   {
@@ -163,19 +164,16 @@ const Fellows2025 = () => {
           </Link>
 
           <span className="text-gold font-semibold uppercase tracking-widest text-sm">
-            Human Capital
+            <EditableText name="fellows.hero.label" defaultContent="Human Capital" />
           </span>
           <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide">
-            The Fellows 2025
+            <EditableText name="fellows.hero.title" defaultContent="The Fellows 2025" />
           </h1>
           <p className="mt-4 text-2xl text-gold font-semibold italic">
-            "The Technological Wizards."
+            <EditableText name="fellows.hero.subtitle" defaultContent='"The Technological Wizards."' />
           </p>
           <p className="mt-6 text-xl text-muted-foreground max-w-3xl">
-            The 2025 cohort is our largest yet—linking private sector leaders with government
-            stewards and elected representatives to offer technology insights. By convening a
-            breadth of experience with leaders, we are facilitating credible, capable overlap
-            at the intersection of tech and policy.
+            <EditableText name="fellows.hero.description" multiline defaultContent="The 2025 cohort is our largest yet—linking private sector leaders with government stewards and elected representatives to offer technology insights. By convening a breadth of experience with leaders, we are facilitating credible, capable overlap at the intersection of tech and policy." />
           </p>
         </div>
       </section>
@@ -185,20 +183,19 @@ const Fellows2025 = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl">
             <h2 className="font-display text-3xl text-foreground mb-6">
-              Making the Policy Class More Effective
+              <EditableText name="fellows.intro.title" defaultContent="Making the Policy Class More Effective" />
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Our goal is to make the policy class more effective, less reactive, by interlocking
-              private sector technological know-how with the architects of policy.
+              <EditableText name="fellows.intro.p1" multiline defaultContent="Our goal is to make the policy class more effective, less reactive, by interlocking private sector technological know-how with the architects of policy." />
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Future Union is pleased to welcome our 2025 cohort of Fellows. The members comprising this distinguished class come from across the world, representing Australia, Germany, Israel, Mexico, the U.K., and the U.S., as some of the most innovative thinkers in finance and business. While each member is notable of their own accord, each invitee was selected for their ability to contribute in a designated domain and as an added member of broader cohort.
+              <EditableText name="fellows.intro.p2" multiline defaultContent="Future Union is pleased to welcome our 2025 cohort of Fellows. The members comprising this distinguished class come from across the world, representing Australia, Germany, Israel, Mexico, the U.K., and the U.S., as some of the most innovative thinkers in finance and business. While each member is notable of their own accord, each invitee was selected for their ability to contribute in a designated domain and as an added member of broader cohort." />
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Collectively, the curated group has elevated the dialogue on national security with fresh perspectives in Washington, D.C. and the technology epicenters across the U.S.
+              <EditableText name="fellows.intro.p3" multiline defaultContent="Collectively, the curated group has elevated the dialogue on national security with fresh perspectives in Washington, D.C. and the technology epicenters across the U.S." />
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We are honored to host such a capable group of leaders collaborating and working to make a difference in the competition against America and our allies' adversaries.
+              <EditableText name="fellows.intro.p4" multiline defaultContent="We are honored to host such a capable group of leaders collaborating and working to make a difference in the competition against America and our allies' adversaries." />
             </p>
           </div>
         </div>
@@ -208,7 +205,7 @@ const Fellows2025 = () => {
       <section className="py-16 bg-gradient-subtle">
         <div className="container mx-auto px-6">
           <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide mb-12">
-            Investors
+            <EditableText name="fellows.investors.title" defaultContent="Investors" />
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -231,7 +228,7 @@ const Fellows2025 = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-6">
           <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide mb-12">
-            Professional Experts
+            <EditableText name="fellows.experts.title" defaultContent="Professional Experts" />
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">

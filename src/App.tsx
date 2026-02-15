@@ -5,6 +5,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { ScrollRestoration } from "@/components/ScrollRestoration";
+import { CMSProvider } from "@/contexts/CMSContext";
+import { AdminBar } from "@/components/cms/AdminBar";
+import AdminLogin from "./pages/AdminLogin";
+
+
+
 import Index from "./pages/Index";
 import { PasswordProtected } from "@/components/PasswordProtected";
 import VeteranEmployers from "./pages/VeteranEmployers";
@@ -31,35 +37,39 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <ScrollRestoration />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/veteran-employers" element={<VeteranEmployers />} />
-            <Route path="/intrepid-investors" element={<IntrepidInvestors />} />
-            <Route path="/clean-capital" element={<CleanCapital />} />
-            <Route path="/fellows-2025" element={<Fellows2025 />} />
-            <Route path="/global-defense-300" element={
-              <PasswordProtected>
-                <GlobalDefense300 />
-              </PasswordProtected>
-            } />
-            <Route path="/decoupling-index" element={<DecouplingIndex />} />
-            <Route path="/top-defense-companies-2024" element={
-              <PasswordProtected>
-                <TopDefenseCompanies2024 />
-              </PasswordProtected>
-            } />
-            <Route path="/research" element={<ResearchPage />} />
-            <Route path="/views" element={<ViewsPage />} />
-            <Route path="/pensions" element={<Pensions />} />
-            <Route path="/endowments" element={<Endowments />} />
-            <Route path="/terms" element={<TermsPage />} />
-            <Route path="/privacy" element={<PrivacyPage />} />
-            <Route path="/accessibility" element={<AccessibilityPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+        <CMSProvider>
+          <BrowserRouter>
+            <ScrollRestoration />
+            <AdminBar />
+            <Routes>
+              <Route path="/admin" element={<AdminLogin />} />
+              <Route path="/" element={<Index />} />
+              <Route path="/veteran-employers" element={<VeteranEmployers />} />
+              <Route path="/intrepid-investors" element={<IntrepidInvestors />} />
+              <Route path="/clean-capital" element={<CleanCapital />} />
+              <Route path="/fellows-2025" element={<Fellows2025 />} />
+              <Route path="/global-defense-300" element={
+                <PasswordProtected>
+                  <GlobalDefense300 />
+                </PasswordProtected>
+              } />
+              <Route path="/decoupling-index" element={<DecouplingIndex />} />
+              <Route path="/top-defense-companies-2024" element={
+                <PasswordProtected>
+                  <TopDefenseCompanies2024 />
+                </PasswordProtected>
+              } />
+              <Route path="/research" element={<ResearchPage />} />
+              <Route path="/views" element={<ViewsPage />} />
+              <Route path="/pensions" element={<Pensions />} />
+              <Route path="/endowments" element={<Endowments />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path="/accessibility" element={<AccessibilityPage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </CMSProvider>
       </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>

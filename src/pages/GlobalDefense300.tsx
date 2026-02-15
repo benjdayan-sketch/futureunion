@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { ArrowLeft, Shield, Download, Globe, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { EditableText } from "@/components/cms/EditableText";
 
 const GlobalDefense300 = () => {
     return (
@@ -27,18 +28,16 @@ const GlobalDefense300 = () => {
                     </Link>
 
                     <span className="text-gold font-semibold uppercase tracking-widest text-sm">
-                        The Builders
+                        <EditableText name="defense300.hero.label" defaultContent="The Builders" />
                     </span>
                     <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide">
-                        The Global Defense 300
+                        <EditableText name="defense300.hero.title" defaultContent="The Global Defense 300" />
                     </h1>
                     <p className="mt-4 text-2xl text-gold font-semibold italic">
-                        "The Shield Must Be Shared."
+                        <EditableText name="defense300.hero.subtitle" defaultContent='"The Shield Must Be Shared."' />
                     </p>
                     <p className="mt-6 text-xl text-muted-foreground max-w-3xl">
-                        The free world prevails only if the Arsenal of Democracy is global. We stripped away
-                        the marketing hype to grade the top companies on a single metric: ability to solve
-                        National Security Challenges.
+                        <EditableText name="defense300.hero.description" multiline defaultContent="The free world prevails only if the Arsenal of Democracy is global. We stripped away the marketing hype to grade the top companies on a single metric: ability to solve National Security Challenges." />
                     </p>
                 </div>
             </section>
@@ -50,25 +49,19 @@ const GlobalDefense300 = () => {
                         <div className="flex items-center gap-4 mb-8">
                             <Shield className="w-10 h-10 text-gold" />
                             <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide">
-                                Beyond American Primes
+                                <EditableText name="defense300.content.title" defaultContent="Beyond American Primes" />
                             </h2>
                         </div>
 
                         <div className="space-y-6 text-muted-foreground leading-relaxed mb-12">
                             <p>
-                                For too long, the narrative has ignored the critical contributions of our international
-                                allies. As such, we are the first ranking to look past the American government primes
-                                and emerging defenders to find the critical international players who are building the
-                                sovereign capabilities required for modern allied deterrence.
+                                <EditableText name="defense300.content.p1" multiline defaultContent="For too long, the narrative has ignored the critical contributions of our international allies. As such, we are the first ranking to look past the American government primes and emerging defenders to find the critical international players who are building the sovereign capabilities required for modern allied deterrence." />
                             </p>
                             <p>
-                                Future Union aligns the global capital and industrial base required to win the
-                                future—independently and collectively.
+                                <EditableText name="defense300.content.p2" multiline defaultContent="Future Union aligns the global capital and industrial base required to win the future—independently and collectively." />
                             </p>
                             <p>
-                                Instead of looking at technologies and venture funding, we are looking at
-                                outcomes—singularly, solutions delivered, by any and all means available, which
-                                candidates are the leaders in solving problems.
+                                <EditableText name="defense300.content.p3" multiline defaultContent="Instead of looking at technologies and venture funding, we are looking at outcomes—singularly, solutions delivered, by any and all means available, which candidates are the leaders in solving problems." />
                             </p>
                         </div>
 
@@ -91,12 +84,10 @@ const GlobalDefense300 = () => {
                         {/* Celebration Box */}
                         <div className="bg-card border border-border p-8 mb-12">
                             <h3 className="font-display text-2xl text-foreground mb-4">
-                                Celebrating Sovereign Defense Tech
+                                <EditableText name="defense300.celebration.title" defaultContent="Celebrating Sovereign Defense Tech" />
                             </h3>
                             <p className="text-muted-foreground leading-relaxed">
-                                We are shining a light on the 300 companies—from Paris to Seoul—that are developing
-                                the capabilities the Alliance needs. We celebrate the rise of sovereign defense tech
-                                as the ultimate partner to American strength.
+                                <EditableText name="defense300.celebration.description" multiline defaultContent="We are shining a light on the 300 companies—from Paris to Seoul—that are developing the capabilities the Alliance needs. We celebrate the rise of sovereign defense tech as the ultimate partner to American strength." />
                             </p>
                         </div>
 
@@ -104,11 +95,10 @@ const GlobalDefense300 = () => {
                         <div className="bg-card border border-border p-8 md:p-12">
                             <div className="flex items-center gap-4 mb-6">
                                 <Download className="w-8 h-8 text-gold" />
-                                <h3 className="font-display text-2xl text-foreground">View the Allied Matrix</h3>
+                                <h3 className="font-display text-2xl text-foreground"><EditableText name="defense300.download.title" defaultContent="View the Allied Matrix" /></h3>
                             </div>
                             <p className="text-muted-foreground mb-6">
-                                Access the complete Global Defense 300 ranking with detailed analysis of each
-                                company's national security contributions.
+                                <EditableText name="defense300.download.description" multiline defaultContent="Access the complete Global Defense 300 ranking with detailed analysis of each company's national security contributions." />
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <input

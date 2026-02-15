@@ -5,6 +5,7 @@ import { ArrowLeft, Shield, Target, Globe, Zap, Brain, Lock, Cpu, Cog, Leaf, Roc
 import { Link } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { useState } from "react";
+import { EditableText } from "@/components/cms/EditableText";
 
 interface Company {
   rank: number;
@@ -466,16 +467,16 @@ const CompanyDashboard = ({ verticals }: { verticals: VerticalData[] }) => {
           {/* Label */}
           <div className="inline-flex items-center gap-2 px-4 py-1 text-[0.72rem] tracking-[0.17em] uppercase bg-background border border-border text-foreground mb-4">
             <span className="w-1.5 h-1.5 bg-gold" />
-            The 300 – Company Navigator
+            <EditableText name="topDefense.navigator.label" defaultContent="The 300 – Company Navigator" />
           </div>
 
           {/* Headline */}
           <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-3 mb-4">
             <h2 className="text-xl md:text-2xl font-display tracking-[0.05em] uppercase text-foreground">
-              Operational Verticals & Stages
+              <EditableText name="topDefense.navigator.title" defaultContent="Operational Verticals & Stages" />
             </h2>
             <p className="text-sm text-muted-foreground">
-              Navigate by mission vertical and company maturity (Spark, Forge, Arsenal).
+              <EditableText name="topDefense.navigator.subtitle" defaultContent="Navigate by mission vertical and company maturity (Spark, Forge, Arsenal)." />
             </p>
           </div>
 
@@ -498,8 +499,8 @@ const CompanyDashboard = ({ verticals }: { verticals: VerticalData[] }) => {
                     setActiveStage("spark");
                   }}
                   className={`relative px-4 py-2 text-[0.8rem] uppercase tracking-[0.12em] border transition-all duration-150 cursor-pointer whitespace-nowrap flex items-center gap-2 ${activeVertical === tab.id
-                      ? "bg-gold/20 border-gold text-foreground"
-                      : "bg-background border-border text-muted-foreground hover:border-gold/50 hover:text-foreground"
+                    ? "bg-gold/20 border-gold text-foreground"
+                    : "bg-background border-border text-muted-foreground hover:border-gold/50 hover:text-foreground"
                     }`}
                 >
                   <span className="text-[0.75rem] opacity-70">{tab.index}</span>
@@ -523,8 +524,8 @@ const CompanyDashboard = ({ verticals }: { verticals: VerticalData[] }) => {
                   key={stage}
                   onClick={() => setActiveStage(stage)}
                   className={`px-4 py-1.5 text-[0.78rem] tracking-[0.12em] uppercase border transition-all duration-150 cursor-pointer ${activeStage === stage
-                      ? "bg-gold border-gold text-primary-foreground dark:text-primary-foreground font-semibold"
-                      : "bg-background border-border text-muted-foreground hover:border-gold/50 hover:text-foreground"
+                    ? "bg-gold border-gold text-primary-foreground dark:text-primary-foreground font-semibold"
+                    : "bg-background border-border text-muted-foreground hover:border-gold/50 hover:text-foreground"
                     }`}
                 >
                   {stage.charAt(0).toUpperCase() + stage.slice(1)}
@@ -565,16 +566,16 @@ const TopDefenseCompanies2024 = () => {
           </Link>
 
           <span className="text-gold font-semibold uppercase tracking-widest text-sm">
-            The Builders
+            <EditableText name="topDefense.hero.label" defaultContent="The Builders" />
           </span>
           <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide">
-            Top Defense Companies 2024
+            <EditableText name="topDefense.hero.title" defaultContent="Top Defense Companies 2024" />
           </h1>
           <p className="mt-4 text-2xl text-gold font-semibold italic">
-            The 300: An Audit of the Arsenal
+            <EditableText name="topDefense.hero.subtitle" defaultContent="The 300: An Audit of the Arsenal" />
           </p>
           <p className="mt-6 text-xl text-muted-foreground max-w-3xl">
-            We stripped away the hype to expose the bedrock of our collective defense with a single, cold mandate: <strong className="text-foreground">Outcomes over Origins.</strong>
+            <EditableText name="topDefense.hero.description" defaultContent="We stripped away the hype to expose the bedrock of our collective defense with a single, cold mandate:" /> <strong className="text-foreground"><EditableText name="topDefense.hero.strong" defaultContent="Outcomes over Origins." /></strong>
           </p>
         </div>
       </section>
@@ -586,50 +587,50 @@ const TopDefenseCompanies2024 = () => {
             <div className="flex items-center gap-4 mb-8">
               <Shield className="w-10 h-10 text-gold" />
               <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide">
-                Methodology & Rationale
+                <EditableText name="topDefense.methodology.title" defaultContent="Methodology & Rationale" />
               </h2>
             </div>
 
             <div className="space-y-8">
               {/* The Imperative */}
               <div className="bg-background border border-border p-6">
-                <h3 className="font-display text-xl text-gold mb-3">The Imperative: A Race Against Time</h3>
+                <h3 className="font-display text-xl text-gold mb-3"><EditableText name="topDefense.imperative.title" defaultContent="The Imperative: A Race Against Time" /></h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We are operating on a timeline that is no longer our own. While the Alliance works to re-shore supply chains and regain industrial sovereignty, time is fleeting. Current industry rankings are not audits of power; they are leaderboards of fundraising. This is "Venture Myopia"—a systemic flaw that confuses financial speculation with national security capability.
+                  <EditableText name="topDefense.imperative.text" multiline defaultContent='We are operating on a timeline that is no longer our own. While the Alliance works to re-shore supply chains and regain industrial sovereignty, time is fleeting. Current industry rankings are not audits of power; they are leaderboards of fundraising. This is "Venture Myopia"—a systemic flaw that confuses financial speculation with national security capability.' />
                 </p>
               </div>
 
               {/* The Invisible Middle */}
               <div className="bg-background border border-border p-6">
-                <h3 className="font-display text-xl text-gold mb-3">The Unsung Heroes: The Invisible Middle</h3>
+                <h3 className="font-display text-xl text-gold mb-3"><EditableText name="topDefense.middle.title" defaultContent="The Unsung Heroes: The Invisible Middle" /></h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We looked beyond the venture-driven hype to identify the "Invisible Middle"—the overlooked grinders and unheralded "Shadow Primes" who serve as the backbone of the Alliance. From solid rocket motors to secure ball bearings, these are the companies that provide the bedrock of Allied interoperability.
+                  <EditableText name="topDefense.middle.text" multiline defaultContent='We looked beyond the venture-driven hype to identify the "Invisible Middle"—the overlooked grinders and unheralded "Shadow Primes" who serve as the backbone of the Alliance. From solid rocket motors to secure ball bearings, these are the companies that provide the bedrock of Allied interoperability.' />
                 </p>
               </div>
 
               {/* The Correction */}
               <div className="bg-background border border-border p-6">
-                <h3 className="font-display text-xl text-gold mb-3">The Correction: Five Systemic Failures</h3>
+                <h3 className="font-display text-xl text-gold mb-3"><EditableText name="topDefense.correction.title" defaultContent="The Correction: Five Systemic Failures" /></h3>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex gap-3">
                     <span className="text-gold font-bold">1.</span>
-                    <span><strong className="text-foreground">The Deployment Gap:</strong> We prioritize solutions proving themselves in contested environments over R&D prototypes.</span>
+                    <span><strong className="text-foreground"><EditableText name="topDefense.point1.title" defaultContent="The Deployment Gap:" /></strong> <EditableText name="topDefense.point1.text" defaultContent="We prioritize solutions proving themselves in contested environments over R&D prototypes." /></span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-gold font-bold">2.</span>
-                    <span><strong className="text-foreground">The Fulcrum Blindspot:</strong> We identify the unglamorous manufacturers—the "Shadow Primes" that preserve system constancy.</span>
+                    <span><strong className="text-foreground"><EditableText name="topDefense.point2.title" defaultContent="The Fulcrum Blindspot:" /></strong> <EditableText name="topDefense.point2.text" multiline defaultContent='We identify the unglamorous manufacturers—the "Shadow Primes" that preserve system constancy.' /></span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-gold font-bold">3.</span>
-                    <span><strong className="text-foreground">The Sustainment Void:</strong> Logistics are life. We elevate the MRO tech that accounts for 70% of lifecycle costs.</span>
+                    <span><strong className="text-foreground"><EditableText name="topDefense.point3.title" defaultContent="The Sustainment Void:" /></strong> <EditableText name="topDefense.point3.text" defaultContent="Logistics are life. We elevate the MRO tech that accounts for 70% of lifecycle costs." /></span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-gold font-bold">4.</span>
-                    <span><strong className="text-foreground">Allied Unity:</strong> As the first global ranking, we audit the full Allied Industrial Base across borders.</span>
+                    <span><strong className="text-foreground"><EditableText name="topDefense.point4.title" defaultContent="Allied Unity:" /></strong> <EditableText name="topDefense.point4.text" defaultContent="As the first global ranking, we audit the full Allied Industrial Base across borders." /></span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-gold font-bold">5.</span>
-                    <span><strong className="text-foreground">Asymmetric Leverage:</strong> We champion solutions cheaper to deploy than to destroy.</span>
+                    <span><strong className="text-foreground"><EditableText name="topDefense.point5.title" defaultContent="Asymmetric Leverage:" /></strong> <EditableText name="topDefense.point5.text" defaultContent="We champion solutions cheaper to deploy than to destroy." /></span>
                   </li>
                 </ul>
               </div>
@@ -643,10 +644,10 @@ const TopDefenseCompanies2024 = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide mb-4">
-              8 Mission-Focused Verticals
+              <EditableText name="topDefense.framework.title" defaultContent="8 Mission-Focused Verticals" />
             </h2>
             <p className="text-muted-foreground">
-              We abandoned generic technology categories for outcome-based evaluation. These 300 companies are sovereign assets standing between rhetoric and readiness.
+              <EditableText name="topDefense.framework.description" multiline defaultContent="We abandoned generic technology categories for outcome-based evaluation. These 300 companies are sovereign assets standing between rhetoric and readiness." />
             </p>
           </div>
 

@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 import { SEO } from "@/components/SEO";
+import { EditableText } from "@/components/cms/EditableText";
 
 const NotFound = () => {
   const location = useLocation();
@@ -17,10 +18,10 @@ const NotFound = () => {
         description="The page you are looking for does not exist."
       />
       <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
+        <h1 className="mb-4 text-4xl font-bold"><EditableText name="404.title" defaultContent="404" /></h1>
+        <p className="mb-4 text-xl text-muted-foreground"><EditableText name="404.description" defaultContent="Oops! Page not found" /></p>
         <a href="/" className="text-primary underline hover:text-primary/90">
-          Return to Home
+          <EditableText name="404.back" defaultContent="Return to Home" />
         </a>
       </div>
     </div>
