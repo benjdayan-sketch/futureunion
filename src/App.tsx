@@ -22,6 +22,7 @@ import IntrepidInvestors from "./pages/IntrepidInvestors";
 import GlobalDefense300 from "./pages/GlobalDefense300";
 import DecouplingIndex from "./pages/DecouplingIndex";
 import TopDefenseCompanies2024 from "./pages/TopDefenseCompanies2024";
+import TopDefenseCompanies2025 from "./pages/TopDefenseCompanies2025";
 import ResearchPage from "./pages/ResearchPage";
 import ViewsPage from "./pages/ViewsPage";
 import TermsPage from "./pages/TermsPage";
@@ -57,6 +58,11 @@ const App = () => (
               <Route path="/top-defense-companies-2024" element={
                 <PasswordProtected>
                   <TopDefenseCompanies2024 />
+                </PasswordProtected>
+              } />
+              <Route path="/top-defense-companies-2025" element={
+                <PasswordProtected>
+                  <TopDefenseCompanies2025 />
                 </PasswordProtected>
               } />
               <Route path="/research" element={<ResearchPage />} />
