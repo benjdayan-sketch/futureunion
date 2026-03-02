@@ -44,18 +44,31 @@ export const CMSProvider: React.FC<CMSProviderProps> = ({ children }) => {
     const initializeCMS = async () => {
       // 1. Check active session
       const { data: { session } } = await supabase.auth.getSession();
-      setUser(session?.user ?? null);
-      if (session?.user) {
+      const isHardcodedAdmin = localStorage.getItem('hardcoded_admin') === 'true';
+
+      if (isHardcodedAdmin) {
+        setUser({ id: 'hardcoded-admin', email: 'admin' } as User);
         setIsEditingMode(true);
+      } else {
+        setUser(session?.user ?? null);
+        if (session?.user) {
+          setIsEditingMode(true);
+        }
       }
 
       // 2. Listen for auth changes
       const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-        setUser(session?.user ?? null);
-        if (session?.user) {
+        const isHardcodedAdmin = localStorage.getItem('hardcoded_admin') === 'true';
+        if (isHardcodedAdmin) {
+          setUser({ id: 'hardcoded-admin', email: 'admin' } as User);
           setIsEditingMode(true);
         } else {
-          setIsEditingMode(false);
+          setUser(session?.user ?? null);
+          if (session?.user) {
+            setIsEditingMode(true);
+          } else {
+            setIsEditingMode(false);
+          }
         }
       });
 
@@ -87,6 +100,15 @@ export const CMSProvider: React.FC<CMSProviderProps> = ({ children }) => {
   }, []);
 
   const login = async (email: string, password: string) => {
+    // Hardcoded credentials bypass
+    if (email === 'admin@admin.com' && password === 'admin') {
+      localStorage.setItem('hardcoded_admin', 'true');
+      setUser({ id: 'hardcoded-admin', email: 'admin@admin.com' } as User);
+      setIsEditingMode(true);
+      toast.success("Logged in successfully");
+      return true;
+    }
+
     try {
       const { error } = await supabase.auth.signInWithPassword({
         email,
@@ -108,7 +130,10 @@ export const CMSProvider: React.FC<CMSProviderProps> = ({ children }) => {
   };
 
   const logout = async () => {
+    localStorage.removeItem('hardcoded_admin');
     await supabase.auth.signOut();
+    setUser(null);
+    setIsEditingMode(false);
     toast.info("Logged out");
   };
 

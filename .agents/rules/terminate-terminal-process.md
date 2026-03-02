@@ -1,6 +1,5 @@
 ---
 trigger: always_on
-glob:
-description:
 ---
 
+ENV: Windows. Always use cmd /c for all shell executions to ensure the process terminates correctly and sends an EOF signal. Avoid interactive shells.
