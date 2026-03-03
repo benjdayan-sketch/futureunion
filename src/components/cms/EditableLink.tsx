@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useCMS } from '@/contexts/CMSContext';
 import { cn } from '@/lib/utils';
 import { Check, X, Link as LinkIcon, ExternalLink } from 'lucide-react';
+import { Link as RouterLink } from 'react-router-dom';
 
 interface EditableLinkProps {
     name: string; // key for the text
@@ -156,15 +157,31 @@ export const EditableLink: React.FC<EditableLinkProps> = ({
         );
     }
 
+    const isExternal = displayHref.startsWith('http') || displayHref.startsWith('mailto:') || displayHref.startsWith('tel:');
+
+    if (isExternal) {
+        return (
+            <a
+                href={displayHref}
+                className={className}
+                target={displayTarget}
+                rel={displayTarget === '_blank' ? 'noopener noreferrer' : ''}
+            >
+                {children}
+                {displayText}
+            </a>
+        );
+    }
+
     return (
-        <a
-            href={displayHref}
+        <RouterLink
+            to={displayHref}
             className={className}
             target={displayTarget}
             rel={displayTarget === '_blank' ? 'noopener noreferrer' : ''}
         >
             {children}
             {displayText}
-        </a>
+        </RouterLink>
     );
 };

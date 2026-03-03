@@ -625,7 +625,6 @@ const TopDefenseCompanies2025 = () => {
       <SEO
         title="Top Defense Companies 2025"
         description="We stripped away the hype to expose the bedrock of our collective defense with a single, cold mandate: Outcomes over Origins."
-        image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&h=630&fit=crop"
       />
       <Navbar />
 

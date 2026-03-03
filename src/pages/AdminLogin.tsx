@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
@@ -25,6 +26,7 @@ const AdminLogin = () => {
   if (isAdmin) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-background">
+        <SEO title="Admin Login" description="Secure administration area for Future Union content management." />
         <h1 className="text-2xl font-bold mb-4">You are already logged in</h1>
         <Button onClick={() => navigate("/")}>Go to Home</Button>
       </div>
@@ -33,6 +35,7 @@ const AdminLogin = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-muted/20">
+      <SEO title="Admin Login" description="Secure administration area for Future Union content management." />
       <Card className="w-[400px]">
         <CardHeader>
           <CardTitle>Admin Access</CardTitle>

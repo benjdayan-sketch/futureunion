@@ -33,7 +33,7 @@ export const Contact = () => {
               name="home.contact.btn.email.text"
               linkName="home.contact.btn.email.href"
               defaultContent="Contact Us"
-              defaultHref="mailto:info@futureunion.co"
+              defaultHref="/contact"
               className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold uppercase tracking-wider text-sm hover:opacity-90 transition-all duration-300 shadow-lg"
             >
               <Mail className="w-5 h-5" />

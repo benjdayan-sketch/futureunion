@@ -50,8 +50,8 @@ const navLinks = [
     key: "home.navbar.link.contact",
     label: "Contact",
     defaultLabel: "Contact",
-    href: "/#contact",
-    defaultHref: "/#contact"
+    href: "/contact",
+    defaultHref: "/contact"
   },
 ];
 

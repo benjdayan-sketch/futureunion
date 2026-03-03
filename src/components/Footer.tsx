@@ -8,7 +8,7 @@ const footerLinks = [
   { key: "home.footer.link.mission", label: "Mission", defaultLabel: "Mission", href: "/#mission", defaultHref: "/#mission" },
   { key: "home.footer.link.initiatives", label: "Initiatives", defaultLabel: "Initiatives", href: "/#initiatives", defaultHref: "/#initiatives" },
   { key: "home.footer.link.team", label: "Team", defaultLabel: "Team", href: "/#team", defaultHref: "/#team" },
-  { key: "home.footer.link.contact", label: "Contact", defaultLabel: "Contact", href: "/#contact", defaultHref: "/#contact" },
+  { key: "home.footer.link.contact", label: "Contact", defaultLabel: "Contact", href: "/contact", defaultHref: "/contact" },
 ];
 
 const legalLinks = [

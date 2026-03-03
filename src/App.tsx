@@ -12,6 +12,7 @@ import AdminLogin from "./pages/AdminLogin";
 
 
 import Index from "./pages/Index";
+import ContactPage from "./pages/ContactPage";
 import { PasswordProtected } from "@/components/PasswordProtected";
 import VeteranEmployers from "./pages/VeteranEmployers";
 import CleanCapital from "./pages/CleanCapital";
@@ -37,7 +38,7 @@ const App = () => (
     <ThemeProvider attribute="class" defaultTheme="light">
       <TooltipProvider>
         <Toaster />
-        <Sonner />
+        <Sonner position="bottom-left" />
         <CMSProvider>
           <BrowserRouter>
             <ScrollRestoration />
@@ -45,6 +46,7 @@ const App = () => (
             <Routes>
               <Route path="/admin" element={<AdminLogin />} />
               <Route path="/" element={<Index />} />
+              <Route path="/contact" element={<ContactPage />} />
               <Route path="/veteran-employers" element={<VeteranEmployers />} />
               <Route path="/intrepid-investors" element={<IntrepidInvestors />} />
               <Route path="/clean-capital" element={<CleanCapital />} />
