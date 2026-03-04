@@ -13,6 +13,7 @@ import AdminLogin from "./pages/AdminLogin";
 
 import Index from "./pages/Index";
 import ContactPage from "./pages/ContactPage";
+import ThankYouPage from "./pages/ThankYouPage";
 import { PasswordProtected } from "@/components/PasswordProtected";
 import VeteranEmployers from "./pages/VeteranEmployers";
 import CleanCapital from "./pages/CleanCapital";
@@ -47,6 +48,7 @@ const App = () => (
               <Route path="/admin" element={<AdminLogin />} />
               <Route path="/" element={<Index />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/thank-you" element={<ThankYouPage />} />
               <Route path="/veteran-employers" element={<VeteranEmployers />} />
               <Route path="/intrepid-investors" element={<IntrepidInvestors />} />
               <Route path="/clean-capital" element={<CleanCapital />} />

@@ -3,29 +3,57 @@ import { Navbar } from "@/components/Navbar";
 import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft, Send } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { EditableText } from "@/components/cms/EditableText";
 import { toast } from "sonner";
+import { supabase } from "@/lib/supabase";
 
 const ContactPage = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         company: "",
         message: "",
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // In a real application, you would send this to your backend
-        console.log("Form submitted:", formData);
-        toast.success("Message sent successfully! We'll be in touch soon.");
-        setFormData({ name: "", email: "", company: "", message: "" });
+
+        setIsSubmitting(true);
+
+        try {
+            const { error } = await supabase
+                .from('contact_submissions')
+                .insert([
+                    {
+                        name: formData.name,
+                        email: formData.email,
+                        company: formData.company || null,
+                        message: formData.message,
+                    }
+                ]);
+
+            if (error) {
+                console.error("Supabase error:", error);
+                throw error;
+            }
+
+            toast.success("Message sent successfully! We'll be in touch soon.");
+            setFormData({ name: "", email: "", company: "", message: "" });
+            navigate('/thank-you');
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            toast.error("Failed to send message. Please try again later.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -165,10 +193,11 @@ const ContactPage = () => {
 
                             <button
                                 type="submit"
-                                className="w-full group inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold uppercase tracking-wider text-sm hover:opacity-90 transition-all duration-300 shadow-lg"
+                                disabled={isSubmitting}
+                                className="w-full group inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold uppercase tracking-wider text-sm hover:opacity-90 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 <EditableText name="contact.form.submit" defaultContent="Submit Message" />
-                                <Send className="w-4 h-4" />
+                                <Send className={`w-4 h-4 ${isSubmitting ? 'animate-pulse' : ''}`} />
                             </button>
                         </form>
                     </div>
