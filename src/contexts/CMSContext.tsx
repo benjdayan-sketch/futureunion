@@ -153,14 +153,20 @@ export const CMSProvider: React.FC<CMSProviderProps> = ({ children }) => {
       return;
     }
 
-    // 3. Save to Supabase
+    // 3. Save via API (uses service role key server-side to bypass RLS)
     try {
-      const { error } = await supabase
-        .from('cms_content')
-        .upsert({ key, value }, { onConflict: 'key' });
+      const response = await fetch('/api/update-content', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_CMS_ADMIN_TOKEN}`,
+        },
+        body: JSON.stringify({ key, value }),
+      });
 
-      if (error) {
-        console.error('Error saving to Supabase:', error);
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        console.error('Error saving:', data.error || response.statusText);
         toast.error("Failed to save changes");
       } else {
         console.log(`Saved ${key}`);
