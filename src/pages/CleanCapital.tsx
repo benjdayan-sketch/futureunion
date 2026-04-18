@@ -1,16 +1,17 @@
 import { Navbar } from "@/components/Navbar";
 import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
-import { ArrowLeft, Shield, CheckCircle } from "lucide-react";
+import { ArrowLeft, Shield, CheckCircle, FileText, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { EditableText } from "@/components/cms/EditableText";
 
 const CleanCapital = () => {
   return (
     <main className="min-h-screen bg-background">
       <SEO
-        title="Clean Capital"
-        description="Promoting ethical capital sources free from adversarial influence. Geopolitical evaluation and transparency assessment of the funding sources of US and International Venture Capital & Private Equity Funds."
+        title="Clean Capital Certification"
+        description="Allied Capital. Verified. In a competition where capital is a strategic instrument, verification is a strategic necessity."
       />
       <Navbar />
 
@@ -32,8 +33,11 @@ const CleanCapital = () => {
           <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide">
             <EditableText name="cleanCapital.hero.title" defaultContent="Clean Capital Certification" />
           </h1>
+          <p className="mt-4 text-2xl text-gold font-semibold italic">
+            <EditableText name="cleanCapital.hero.subtitle" defaultContent="Allied Capital. Verified." />
+          </p>
           <p className="mt-6 text-xl text-muted-foreground max-w-3xl">
-            <EditableText name="cleanCapital.hero.description" multiline defaultContent="Geopolitical evaluation and transparency assessment of the funding sources of US and International Venture Capital & Private Equity Funds" />
+            <EditableText name="cleanCapital.hero.description" multiline defaultContent="In a Competition Where Capital Is a Strategic Instrument, Verification Is a Strategic Necessity." />
           </p>
         </div>
       </section>
@@ -41,54 +45,128 @@ const CleanCapital = () => {
       {/* Main Content */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <Shield className="w-16 h-16 text-gold mx-auto mb-6" />
-              <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide mb-6">
-                <EditableText name="cleanCapital.intro.title" defaultContent="Promoting Democratic Ideals through Dealmaking" />
-              </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                <EditableText name="cleanCapital.intro.subtitle" defaultContent="Evaluating the Sources of Limited Partner Capital comprising the Alternative Investment Community" />
+          <div className="max-w-4xl">
+            {/* Opening */}
+            <div className="space-y-6 text-muted-foreground leading-relaxed mb-12">
+              <p>
+                <EditableText name="cleanCapital.opening.p1" multiline defaultContent="The redirection of Western capital toward allied security assets is one of the most urgent imperatives of this geopolitical moment. But the strategic value of that redirection is only as credible as the capital executing it." />
+              </p>
+              <p>
+                <EditableText name="cleanCapital.opening.p2" multiline defaultContent="Not all capital is equal. Adversarially-aligned capital — operating through opaque ownership structures, sanctioned intermediaries, or entities in direct opposition to the rules-based order — has demonstrated a sustained capacity to infiltrate Western markets, distort allied investment ecosystems, and extract strategic concessions under the guise of commercial activity." />
+              </p>
+              <p>
+                <EditableText name="cleanCapital.opening.p3" multiline defaultContent="Clean Capital Certification is Future Union's response: a rigorous, independent verification standard confirming that the capital participating in the allied investment ecosystem is transparent in origin, aligned in values, and free from adversarial influence." />
               </p>
             </div>
 
-            <div className="bg-card border border-border p-8 md:p-12 mb-12">
+            {/* What It Is */}
+            <div className="p-8 bg-gradient-subtle border border-border mb-8">
               <div className="flex items-center gap-4 mb-6">
-                <CheckCircle className="w-8 h-8 text-gold" />
-                <h3 className="font-display text-2xl text-foreground"><EditableText name="cleanCapital.certified.title" defaultContent="Certified Investors" /></h3>
+                <Shield className="w-8 h-8 text-gold" />
+                <h3 className="font-display text-2xl text-foreground">
+                  <EditableText name="cleanCapital.what.title" defaultContent="What Clean Capital Certification Is" />
+                </h3>
               </div>
-              <p className="text-muted-foreground leading-relaxed">
-                <EditableText name="cleanCapital.certified.description" multiline defaultContent="Linked below are Investors that have Voluntarily Certified as not having ties to countries hostile to Democracy." />
-              </p>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  <EditableText name="cleanCapital.what.p1" multiline defaultContent="Clean Capital Certification is a geopolitical evaluation and transparency assessment of the funding sources comprising U.S. and international venture capital and private equity funds — with particular focus on the limited partner base that ultimately underlies those capital pools." />
+                </p>
+                <p>
+                  <EditableText name="cleanCapital.what.p2" multiline defaultContent="It is not a self-reported designation. It is a verified credential — earned through independent review of ownership structure, capital provenance, and alignment with allied values and the international rules-based order." />
+                </p>
+                <p>
+                  <EditableText name="cleanCapital.what.p3" multiline defaultContent="This is a voluntary certification. The investors who carry it have chosen to meet the standard — and in doing so, have made a public commitment to ensuring their capital serves democratic institutions rather than undermining them." />
+                </p>
+              </div>
             </div>
 
-            <div className="space-y-8">
-              <div className="p-8 bg-gradient-subtle border border-border">
-                <h3 className="font-display text-2xl text-foreground mb-4"><EditableText name="cleanCapital.info1.title" defaultContent="What is Clean Capital Certification?" /></h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  <EditableText name="cleanCapital.info1.description" multiline defaultContent="Clean Capital Certification is Future Union's initiative to evaluate and verify that venture capital and private equity funds do not have funding ties to countries hostile to democracy. This voluntary certification program promotes transparency and ethical investment practices in the technology and financial sectors." />
-                </p>
-              </div>
+            {/* What Certified Capital Means */}
+            <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide mb-6">
+              <EditableText name="cleanCapital.certified.title" defaultContent="What Certified Capital Means" />
+            </h2>
+            <div className="space-y-4 mb-12">
+              {[
+                { title: "Allied in origin", desc: "Sourced from entities domiciled in and aligned with rule-of-law nations." },
+                { title: "Transparent in structure", desc: "Free from opaque beneficial ownership arrangements that obscure adversarial influence." },
+                { title: "LP-verified", desc: "Limited partner composition assessed for ties to nations or entities hostile to democratic values." },
+                { title: "Compliant in conduct", desc: "Operating within the legal, regulatory, and ethical frameworks of the rules-based order." },
+                { title: "Independently assessed", desc: "Certification is earned through external review, not self-attestation." },
+              ].map((item) => (
+                <div key={item.title} className="bg-card border border-border p-6">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-gold mt-0.5 shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
+                      <p className="text-muted-foreground text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-              <div className="p-8 bg-gradient-subtle border border-border">
-                <h3 className="font-display text-2xl text-foreground mb-4"><EditableText name="cleanCapital.info2.title" defaultContent="Why It Matters" /></h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  <EditableText name="cleanCapital.info2.description" multiline defaultContent="In an era of increasing geopolitical competition, understanding the source of capital is crucial for national security and democratic values. By certifying that investment funds are free from adversarial influence, we help protect innovation ecosystems and ensure that capital flows support rather than undermine democratic institutions." />
+            {/* Why It Matters */}
+            <div className="p-8 bg-gradient-subtle border border-border mb-12">
+              <h3 className="font-display text-2xl text-foreground mb-4">
+                <EditableText name="cleanCapital.why.title" defaultContent="Why It Matters" />
+              </h3>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  <EditableText name="cleanCapital.why.p1" multiline defaultContent="Understanding the source of capital is no longer merely a compliance obligation. It is a national security imperative." />
+                </p>
+                <p>
+                  <EditableText name="cleanCapital.why.p2" multiline defaultContent="Adversarial capital has proven adept at positioning itself within Western portfolios — often indirectly, often invisibly — gaining influence over critical technologies, extracting intellectual property, and undermining the very security outcomes that allied investment is designed to advance. The innovation ecosystems of the free world are at particular risk: venture and private equity structures, with their layered LP bases and international capital pools, present precisely the kind of opacity that adversarial actors have learned to exploit." />
+                </p>
+                <p>
+                  <EditableText name="cleanCapital.why.p3" multiline defaultContent="Clean Capital Certification exists to close that gap — protecting the integrity of allied investment and ensuring that capital flowing into national security assets does not inadvertently serve the interests it is designed to counter." />
                 </p>
               </div>
+            </div>
 
-              <div className="p-8 bg-gradient-subtle border border-border">
-                <h3 className="font-display text-2xl text-foreground mb-4"><EditableText name="cleanCapital.info3.title" defaultContent="How to Get Certified" /></h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  <EditableText name="cleanCapital.info3.description" multiline defaultContent="Investment firms interested in obtaining Clean Capital Certification can contact Future Union to begin the evaluation process. Our team will assess the fund's limited partner base and verify compliance with our standards for democratic alignment." />
+            {/* Certified Investors */}
+            <div className="bg-card border border-gold/30 p-8 mb-12">
+              <div className="flex items-center gap-4 mb-4">
+                <Users className="w-8 h-8 text-gold" />
+                <h3 className="font-display text-2xl text-foreground">
+                  <EditableText name="cleanCapital.investors.title" defaultContent="Certified Investors" />
+                </h3>
+              </div>
+              <p className="text-muted-foreground mb-6">
+                <EditableText name="cleanCapital.investors.desc" multiline defaultContent="The following investors have voluntarily applied and been certified as having no material funding ties to nations hostile to democracy. Certification is publicly listed as a signal of commitment to allied investment integrity." />
+              </p>
+              <Link to="/contact" className="text-gold font-semibold uppercase tracking-wider text-sm hover:text-gold/80 transition-colors">
+                View the Clean Capital Registry →
+              </Link>
+            </div>
+
+            {/* How to Get Certified */}
+            <div className="p-8 bg-gradient-subtle border border-border mb-8">
+              <div className="flex items-center gap-4 mb-6">
+                <FileText className="w-8 h-8 text-gold" />
+                <h3 className="font-display text-2xl text-foreground">
+                  <EditableText name="cleanCapital.howto.title" defaultContent="How to Get Certified" />
+                </h3>
+              </div>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  <EditableText name="cleanCapital.howto.p1" multiline defaultContent="Investment firms seeking Clean Capital Certification submit ownership, LP provenance, and compliance documentation for independent assessment against Future Union's allied capital standard. Certified entities receive a Clean Capital designation and are listed within the Future Union registry." />
+                </p>
+                <p className="font-semibold text-foreground">
+                  <EditableText name="cleanCapital.howto.p2" defaultContent="The process is rigorous by design. The standard is meaningful because it is not easily met." />
                 </p>
               </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/contact" className="px-8 py-3 bg-gold text-navy font-semibold uppercase tracking-wider text-sm hover:bg-gold/90 transition-colors text-center">
+                Apply for Certification
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       <Footer />
+      <ScrollToTop />
     </main>
   );
 };

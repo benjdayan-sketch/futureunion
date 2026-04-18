@@ -150,8 +150,8 @@ const Fellows2025 = () => {
   return (
     <main className="min-h-screen bg-background">
       <SEO
-        title="Fellows 2025"
-        description="The 2025 cohort is our largest yet—linking private sector leaders with government stewards and elected representatives to offer technology insights."
+        title="The Commission 2025"
+        description="Architecting America's Technological Edge. The Private Sector Backbench for Public Decision-Makers. A curated, on-demand bench of world-class private sector leaders committed to serving as an objective intelligence resource for elected officials."
       />
       <Navbar />
 
@@ -167,13 +167,16 @@ const Fellows2025 = () => {
             <EditableText name="fellows.hero.label" defaultContent="Human Capital" />
           </span>
           <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide">
-            <EditableText name="fellows.hero.title" defaultContent="The Fellows 2025" />
+            <EditableText name="fellows.hero.title" defaultContent="The Commission" />
           </h1>
           <p className="mt-4 text-2xl text-gold font-semibold italic">
-            <EditableText name="fellows.hero.subtitle" defaultContent='"The Technological Wizards."' />
+            <EditableText name="fellows.hero.subtitle" defaultContent="Architecting America's Technological Edge." />
           </p>
           <p className="mt-6 text-xl text-muted-foreground max-w-3xl">
-            <EditableText name="fellows.hero.description" multiline defaultContent="The 2025 cohort is our largest yet—linking private sector leaders with government stewards and elected representatives to offer technology insights. By convening a breadth of experience with leaders, we are facilitating credible, capable overlap at the intersection of tech and policy." />
+            <EditableText name="fellows.hero.description" multiline defaultContent="The Private Sector Backbench for Public Decision-Makers. Technology is moving faster than policy. The gap between what the private sector is building and what the policy class understands is not merely an inefficiency — it is a strategic liability that adversaries with more centralized decision-making structures do not share." />
+          </p>
+          <p className="mt-4 text-muted-foreground max-w-3xl">
+            <EditableText name="fellows.hero.description2" multiline defaultContent="The Commission is Future Union's answer: a curated, on-demand bench of world-class private sector leaders — venture capitalists, defense executives, finance professionals, and domain operators across AI, biotechnology, rare earth resources, cybersecurity, and emerging technology — committed to serving as an objective intelligence resource for elected officials and their staffs." />
           </p>
         </div>
       </section>

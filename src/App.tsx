@@ -31,6 +31,13 @@ import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import AccessibilityPage from "./pages/AccessibilityPage";
 import NotFound from "./pages/NotFound";
+import GlobalDefenseChampionsLeague2025 from "./pages/GlobalDefenseChampionsLeague2025";
+import WorldDefense300 from "./pages/WorldDefense300";
+import DefenseLeaderboard from "./pages/DefenseLeaderboard";
+import SportsAdvisoryCouncil from "./pages/SportsAdvisoryCouncil";
+import AlliedCapital from "./pages/AlliedCapital";
+import AlliedForge from "./pages/AlliedForge";
+import GenerationalCoalition from "./pages/GenerationalCoalition";
 
 const queryClient = new QueryClient();
 
@@ -76,6 +83,41 @@ const App = () => (
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/accessibility" element={<AccessibilityPage />} />
+              <Route path="/global-defense-champions-league-2025" element={
+                <PasswordProtected>
+                  <GlobalDefenseChampionsLeague2025 />
+                </PasswordProtected>
+              } />
+              <Route path="/world-defense-300" element={
+                <PasswordProtected>
+                  <WorldDefense300 />
+                </PasswordProtected>
+              } />
+              <Route path="/defense-leaderboard" element={
+                <PasswordProtected>
+                  <DefenseLeaderboard />
+                </PasswordProtected>
+              } />
+              <Route path="/sports-advisory-council" element={
+                <PasswordProtected>
+                  <SportsAdvisoryCouncil />
+                </PasswordProtected>
+              } />
+              <Route path="/allied-capital" element={
+                <PasswordProtected>
+                  <AlliedCapital />
+                </PasswordProtected>
+              } />
+              <Route path="/allied-forge" element={
+                <PasswordProtected>
+                  <AlliedForge />
+                </PasswordProtected>
+              } />
+              <Route path="/generational-coalition" element={
+                <PasswordProtected>
+                  <GenerationalCoalition />
+                </PasswordProtected>
+              } />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

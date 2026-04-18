@@ -10,30 +10,31 @@ const researchReports = [
     {
         key: "report1",
         title: "America First Investment Policy",
-        subtitle: "White House Executive Order",
-        description: "Analysis and recommended next steps for the Executive Order on America First investment priorities.",
+        subtitle: "Executive Order Analysis & Implementation Framework",
+        description: "Our analysis of the White House Executive Order on America First investment priorities examines its implications for national security capital allocation and provides a concrete implementation framework for protecting allied security interests while sustaining U.S. technological leadership. This is not a summary of the Order. It is an assessment of what it will take to make it work.",
         icon: FileText,
     },
     {
         key: "report2",
-        title: "2024 Top Employers for Veterans",
-        subtitle: "3rd Edition",
-        description: "Ranking Veteran Employment based on a Rubric of Corporate Transparency fused with Action.",
+        title: "Veterans Transparency Index — 4th Edition (2025)",
+        subtitle: "The Definitive Ranking of Veteran Employment in America",
+        description: "Standardizing for business model differences across industries, the Index strips away self-reported claims and measures only verified actions that produce demonstrable outcomes for transitioning service members. The definitive ranking of the companies that have earned the right to be called the best employers of those who served.",
         icon: FileText,
         link: "/veteran-employers",
     },
     {
         key: "report3",
-        title: "US-China Decoupling Index",
-        subtitle: "2nd Edition",
-        description: "The evaluation & rankings of corporate entanglements with autocratic, adversarial states.",
+        title: "Decoupling & Separation Index — 3rd Edition (2025)",
+        subtitle: "The Scorecard for Economic Sovereignty",
+        description: "An audit of the S&P 500 measuring corporate disengagement from adversarial entanglements — tracking which companies have meaningfully reduced the leverage Russia and China exploit to extract concessions, access intellectual property, and exert strategic influence. The findings are unambiguous: sectors including Information Technology remain dangerously enmeshed.",
         icon: FileText,
+        link: "/decoupling-index",
     },
     {
         key: "report4",
-        title: "ByteDance Spotlight Report",
-        subtitle: "TikTok: Tip of America's Global Investment Conundrum",
-        description: "The Comprehensive Report of the Global Investors invested in ByteDance.",
+        title: "TikTok: The Tip of America's Global Investment Conundrum",
+        subtitle: "ByteDance Spotlight Report",
+        description: "TikTok is not the problem. It is the most visible symptom of a far larger challenge: the depth of Western institutional capital invested in adversarial technology ecosystems. This report maps the global investor base behind ByteDance — the most comprehensive public accounting of this capital exposure available.",
         icon: FileText,
     },
 ];
@@ -43,7 +44,7 @@ const ResearchPage = () => {
         <main className="min-h-screen bg-background">
             <SEO
                 title="Research"
-                description="In-depth analysis and reports on critical issues at the intersection of democracy, technology, and national security."
+                description="Intelligence at the Intersection of Capital, Security, and Democracy. Independent, rigorous analysis built around a single standard: does this advance the allied mission?"
             />
             <Navbar />
 
@@ -59,10 +60,13 @@ const ResearchPage = () => {
                         <EditableText name="research.hero.label" defaultContent="Future Union" />
                     </span>
                     <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide">
-                        <EditableText name="research.hero.title" defaultContent="Research" />
+                        <EditableText name="research.hero.title" defaultContent="Future Union Research" />
                     </h1>
+                    <p className="mt-4 text-2xl text-gold font-semibold italic">
+                        <EditableText name="research.hero.subtitle" defaultContent="Intelligence at the Intersection of Capital, Security, and Democracy." />
+                    </p>
                     <p className="mt-6 text-xl text-muted-foreground max-w-3xl">
-                        <EditableText name="research.hero.description" multiline defaultContent="In-depth analysis and reports on critical issues at the intersection of democracy, technology, and national security." />
+                        <EditableText name="research.hero.description" multiline defaultContent="The decisions that determine allied security are made poorly when the underlying intelligence is incomplete, partisan, or captured by the interests it is meant to evaluate. Future Union's research exists to correct that — with independent, rigorous analysis built around a single standard: does this advance the allied mission?" />
                     </p>
                 </div>
             </section>
@@ -78,21 +82,16 @@ const ResearchPage = () => {
                     </div>
 
                     <div className="bg-card border border-border p-8 mb-8">
-                        <h3 className="font-display text-2xl text-foreground mb-4"><EditableText name="research.item1.title" defaultContent="America First Investment Policy" /></h3>
-                        <p className="text-muted-foreground mb-6">
-                            <EditableText name="research.item1.description" multiline defaultContent="Our analysis of the White House Executive Order and recommended next steps for implementing America First investment priorities that protect national security while promoting economic growth." />
+                        <h3 className="font-display text-xl text-foreground mb-2">
+                            <EditableText name="research.policy.report.title" defaultContent="America First Investment Policy" />
+                        </h3>
+                        <p className="text-gold text-sm font-semibold mb-3">Executive Order Analysis & Implementation Framework</p>
+                        <p className="text-muted-foreground leading-relaxed mb-4">
+                            <EditableText name="research.policy.report.desc" multiline defaultContent="Our analysis of the White House Executive Order on America First investment priorities examines its implications for national security capital allocation and provides a concrete implementation framework for protecting allied security interests while sustaining U.S. technological leadership. This is not a summary of the Order. It is an assessment of what it will take to make it work." />
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="flex-1 px-4 py-3 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
-                            />
-                            <button className="px-8 py-3 bg-gold text-navy font-semibold uppercase tracking-wider text-sm hover:bg-gold/90 transition-colors flex items-center gap-2">
-                                <Download className="w-4 h-4" />
-                                Download Report
-                            </button>
-                        </div>
+                        <button className="px-6 py-2 bg-gold text-navy font-semibold uppercase tracking-wider text-sm hover:bg-gold/90 transition-colors">
+                            Download the Report
+                        </button>
                     </div>
                 </div>
             </section>
@@ -100,47 +99,47 @@ const ResearchPage = () => {
             {/* Our Research */}
             <section className="py-16 bg-gradient-subtle">
                 <div className="container mx-auto px-6">
-                    <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide mb-12">
-                        <EditableText name="research.list.title" defaultContent="Our Research" />
-                    </h2>
+                    <div className="flex items-center gap-4 mb-12">
+                        <FileText className="w-8 h-8 text-gold" />
+                        <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide">
+                            <EditableText name="research.reports.title" defaultContent="Our Research" />
+                        </h2>
+                    </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        {researchReports.slice(1).map((report, index) => (
-                            <div
-                                key={report.key}
-                                className="bg-card border border-border p-8 hover:border-gold/50 transition-all duration-300 animate-fade-up opacity-0"
-                                style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
-                            >
-                                <div className="flex items-start gap-4 mb-4">
-                                    <report.icon className="w-8 h-8 text-gold flex-shrink-0" />
-                                    <div>
-                                        <span className="text-gold text-sm uppercase tracking-wide"><EditableText name={`research.${report.key}.subtitle`} defaultContent={report.subtitle} /></span>
-                                        <h3 className="font-display text-xl text-foreground mt-1"><EditableText name={`research.${report.key}.title`} defaultContent={report.title} /></h3>
-                                    </div>
-                                </div>
-                                <p className="text-muted-foreground text-sm mb-6"><EditableText name={`research.${report.key}.description`} multiline defaultContent={report.description} /></p>
-
+                        {researchReports.slice(1).map((report) => (
+                            <div key={report.key} className="bg-card border border-border p-8 flex flex-col">
+                                <h3 className="font-display text-xl text-foreground mb-2">{report.title}</h3>
+                                <p className="text-gold text-sm font-semibold mb-3">{report.subtitle}</p>
+                                <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">{report.description}</p>
                                 {report.link ? (
-                                    <Link
-                                        to={report.link}
-                                        className="inline-flex items-center gap-2 text-gold hover:underline text-sm"
-                                    >
-                                        View Report →
+                                    <Link to={report.link} className="text-gold font-semibold uppercase tracking-wider text-sm hover:text-gold/80 transition-colors">
+                                        View the Report →
                                     </Link>
                                 ) : (
-                                    <div className="flex flex-col sm:flex-row gap-3">
-                                        <input
-                                            type="email"
-                                            placeholder="Enter your email"
-                                            className="flex-1 px-3 py-2 bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
-                                        />
-                                        <button className="px-4 py-2 bg-gold text-navy font-semibold uppercase tracking-wider text-xs hover:bg-gold/90 transition-colors">
-                                            Download
-                                        </button>
-                                    </div>
+                                    <button className="text-gold font-semibold uppercase tracking-wider text-sm hover:text-gold/80 transition-colors text-left">
+                                        Download the Report →
+                                    </button>
                                 )}
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Closing */}
+            <section className="py-16 bg-background">
+                <div className="container mx-auto px-6">
+                    <div className="max-w-4xl">
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            <EditableText name="research.closing" multiline defaultContent="Every report Future Union publishes represents a deliberate intervention — an analysis that did not exist, a dataset that had not been assembled, or a policy argument that had not been made with sufficient rigor to move the conversation." />
+                        </p>
+                        <p className="text-muted-foreground text-sm italic mb-6">
+                            To inquire about research partnerships, commissioned analysis, or data access:
+                        </p>
+                        <Link to="/contact" className="px-8 py-3 bg-gold text-navy font-semibold uppercase tracking-wider text-sm hover:bg-gold/90 transition-colors inline-block">
+                            Contact the Research Team
+                        </Link>
                     </div>
                 </div>
             </section>
